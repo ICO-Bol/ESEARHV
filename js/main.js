@@ -55,7 +55,7 @@ const baseMaps = {
   "OpenStreetMap": osm,
   "Google Satellite": googleSat
 };
-L.control.layers(baseMaps, {}, { collapsed: false }).addTo(map);
+L.control.layers(baseMaps, {}, { collapsed: true }).addTo(map);
 
 // Capas temáticas (se llenarán tras cargar los GeoJSON)
 let ueLayer = null;
