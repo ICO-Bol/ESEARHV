@@ -363,3 +363,97 @@ modal.addEventListener("click", (e) => {
     currentLayerToDownload = null;
   }
 });
+
+// Leyenda como control flotante
+const legendControl = L.control({ position: 'bottomright' });
+
+legendControl.onAdd = () => {
+  const div = L.DomUtil.create('div', 'leaflet-control-legend');
+  div.innerHTML = `
+    <div style="
+      background: #ffffff;
+      padding: 0.5rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #b8ddd6;
+      font-family: Cambria, serif;
+      font-size: 0.8rem;
+      max-width: 260px;
+    ">
+      <div style="
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        color: #0f4c5c;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      " id="legend-title">
+        <span>Unidades de estudio</span>
+        <span id="legend-toggle" style="font-size:1rem;">−</span>
+      </div>
+      <ul id="legend-content" style="
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+      ">
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#00734C;border:1px solid #ccc;display:inline-block;"></span>
+          1. Bosque cerrado siempre verde
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#38A800;border:1px solid #ccc;display:inline-block;"></span>
+          2. Bosque semiabierto semideciduo
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#9ADC42;border:1px solid #ccc;display:inline-block;"></span>
+          3. Bosque abierto semideciduo
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#FFFF73;border:1px solid #ccc;display:inline-block;"></span>
+          4. Plantación forestal
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#E1E1E1;border:1px solid #ccc;display:inline-block;"></span>
+          5. Afloramiento rocoso
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#FFBEE8;border:1px solid #ccc;display:inline-block;"></span>
+          6. Cultivos agrícolas y forrajeros
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#000000;border:1px solid #ccc;display:inline-block;"></span>
+          7. Infraestructuras civiles
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#FF5500;border:1px solid #ccc;display:inline-block;"></span>
+          8. Suelos desnudos y erosionados
+        </li>
+        <li style="display:flex;align-items:center;gap:0.4rem;margin:0.2rem 0;">
+          <span style="width:14px;height:14px;border-radius:2px;background:#0070FF;border:1px solid #ccc;display:inline-block;"></span>
+          9. Cuerpos de agua superficial
+        </li>
+      </ul>
+    </div>
+  `;
+
+  // Hacer que el control no intercepte eventos del mapa
+  L.DomEvent.disableClickPropagation(div);
+  L.DomEvent.disableScrollPropagation(div);
+
+  // Toggle mostrar/ocultar leyenda
+  const title = div.querySelector('#legend-title');
+  const content = div.querySelector('#legend-content');
+  const toggle = div.querySelector('#legend-toggle');
+  let visible = true;
+
+  title.addEventListener('click', () => {
+    visible = !visible;
+    content.style.display = visible ? 'block' : 'none';
+    toggle.textContent = visible ? '−' : '+';
+  });
+
+  return div;
+};
+
+legendControl.addTo(map);
