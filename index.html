@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Geovisor de la evaluación de servicios ecosistémicos de las áreas de recarga de Vallegrande</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="header">
+    <h1>Geovisor de la evaluación de servicios ecosistémicos de las áreas de recarga de Vallegrande</h1>
+    <p class="subtitle">En el marco del proyecto Agua y Seguridad Alimentaria (ASA) en Vallegrande</p>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+    <!-- Panel izquierdo: narrativa + descarga -->
+    <aside class="left-panel">
+      <h2>Hilos de Agua y Vida: La Historia Socioecológica de Nuestras Áreas de recarga</h2>
+
+      <!-- Acordeón de capítulos -->
+      <div class="accordion">
+        <!-- Capítulo 1 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 1: La Tierra que Habitamos (Unidades de Estudio)</button>
+          <div class="accordion-content">
+            <p><em>"Todo paisaje cuenta una historia escrita en el relieve de sus montañas y la textura de su suelo."</em></p>
+            <p>Nuestra travesía comienza observando la arquitectura natural del territorio. Al delimitar las cuencas y subcuencas hidrográficas de zonas como Vallegrande y Yaguari/Palmarito, descubrimos un mosaico diverso donde los bosques nativos, las áreas de cultivo y los causes de agua conviven. Esta configuración del uso del suelo no es estática: representa la estructura biofísica básica sobre la que florece la vida y sobre la cual descansan los medios de subsistencia de las comunidades locales.</p>
+            <p><strong>En este capítulo:</strong> Exploramos la delimitación geográfica y la cobertura vegetal que sirven de cimiento para todo el análisis socioecológico.</p>
+          </div>
+        </div>
+
+        <!-- Capítulo 2 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 2: Las Cicatrices del Paisaje (Impulsores de Cambio)</button>
+          <div class="accordion-content">
+            <p><em>"El territorio responde a nuestras decisiones: el avance de la frontera y las fuerzas de la naturaleza imponen nuevos desafíos."</em></p>
+            <p>A medida que recorremos el territorio, emergen las huellas de la presión humana y las amenazas naturales. La pérdida de vegetación nativa, la expansión agrícola no planificada y la contaminación amenazan la estabilidad del ecosistema. Al mismo tiempo, factores como la erosión hídrica, la propensión a los deslizamientos y la recurrencia de incendios forestales revelan la fragilidad del suelo. Esta mirada integra la realidad física con la voz de las comunidades, visibilizando los problemas climáticos y ambientales que la población experimenta día a día.</p>
+            <p><strong>En este capítulo:</strong> Analizamos las presiones y riesgos que vulneran la capacidad del entorno para sostener la vida.</p>
+          </div>
+        </div>
+
+        <!-- Capítulo 3 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 3: El Valor Invisible de la Naturaleza (Servicios Ecosistémicos)</button>
+          <div class="accordion-content">
+            <p><em>"El bosque no solo viste las montañas: regula el agua que tomamos, sostiene la biodiversidad y alimenta nuestro futuro."</em></p>
+            <p>A pesar de las presiones, la naturaleza trabaja continuamente. En las laderas y bosques conservados, el suelo actúa como una esponja gigante que retiene el agua de lluvia y mantiene el flujo de los ríos. A través de modelos hidrológicos y aforos en campo, cuantificamos el suministro de agua dulce, la conservación del hábitat y la belleza paisajística. Al cruzar esta oferta natural con la valoración sociocultural de sus habitantes, identificamos las Áreas Multifuncionales: auténticos motores ecológicos que concentran la mayor capacidad de respuesta y resiliencia del territorio.</p>
+            <p><strong>En este capítulo:</strong> Mapeamos y cuantificamos los beneficios tangibles e intangibles que nos brindan los ecosistemas.</p>
+          </div>
+        </div>
+
+        <!-- Capítulo 4 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 4: De la Ciencia a la Acción (Zonificación Funcional)</button>
+          <div class="accordion-content">
+            <p><em>"Proteger el agua exige saber dónde intervenir, dónde restaurar y cómo producir en armonía."</em></p>
+            <p>Conociendo qué áreas nos brindan servicios vitales y cuáles están bajo mayor amenaza, conectamos el conocimiento con la toma de decisiones. Al cruzar la oferta de servicios, las presiones ambientales y la capacidad de uso del suelo, construimos la Zonificación Funcional. Aquí definimos límites claros y oportunidades estratégicas: zonas de estricta protección y conservación hidrológica, áreas prioritarias para la restauración ecológica, fajas de amortiguamiento y espacios destinados al uso productivo regulado.</p>
+            <p><strong>En este capítulo:</strong> Descubrimos la hoja de ruta espacial para la conservación, restauración y gobernanza del territorio.</p>
+          </div>
+        </div>
+
+        <!-- Capítulo 5 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 5: El Pulso de la Recuperación (Monitoreo Ambiental)</button>
+          <div class="accordion-content">
+            <p><em>"La planificación no termina en el papel: se valida día a día en el territorio."</em></p>
+            <p>Las acciones implementadas requieren un seguimiento constante para asegurar su efectividad a largo plazo. En este espacio se despliega una red de puntos de control e indicadores diseñados para evaluar la evolución de los ecosistemas intervenidos. Medimos cómo la restauración de coberturas vegetales, las obras de conservación de suelos y la regulación de actividades rinden frutos en la salud ecohidrológica de la cuenca.</p>
+            <p><strong>En este capítulo:</strong> Hacemos seguimiento a los avances de las intervenciones territoriales y la efectividad de las acciones clave.</p>
+          </div>
+        </div>
+
+        <!-- Capítulo 6 -->
+        <div class="accordion-item">
+          <button class="accordion-header">Capítulo 6: La Vigilancia del Clima (SAT Vallegrande)</button>
+          <div class="accordion-content">
+            <p><em>"Anticiparse al clima es proteger a nuestra gente y asegurar el suministro hídrico del mañana."</em></p>
+            <p>El clima es el gran dinamizador de esta historia. A través del Sistema de Alerta Temprana (SAT) de Vallegrande, monitoreamos de forma continua las variables meteorológicas e hidrológicas que transforman el entorno. Mediante el seguimiento de precipitaciones, temperaturas y caudales, generamos alertas preventivas ante sequías prolongadas, lluvias extremas o riesgo de incendios. Este capítulo convierte al geovisor en un instrumento vivo para la resiliencia y la gestión adaptativa del riesgo en la región.</p>
+            <p><strong>En este capítulo:</strong> Accedemos a datos e hidroalertas en tiempo real para tomar decisiones anticipadas frente al cambio climático.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de descarga -->
+      <div class="download-section">
+        <h3>Descargar cartografías</h3>
+        <ul class="download-list">
+          <li>
+            <span>Unidades de estudio (UE_ESEARHV)</span>
+            <button class="btn-download" data-layer="UE_ESEARHV">Descargar SHP</button>
+          </li>
+          <li>
+            <span>Unidades hidrológicas (UH_ESEARHV)</span>
+            <button class="btn-download" data-layer="UH_ESEARHV">Descargar SHP</button>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Panel derecho: mapa + dashboard -->
+    <div class="right-panel">
+      <div id="map"></div>
+
+      <div class="dashboard">
+        <h3>Dashboard: suma de área por unidad de estudio</h3>
+
+        <!-- Filtros -->
+        <div class="filters">
+          <label for="filter-type">Filtrar por:</label>
+          <select id="filter-type">
+            <option value="none">Sin filtro</option>
+            <option value="LimHidro">Límite hidrográfico (LimHidro)</option>
+            <option value="LimLegal">Límite legal (LimLegal)</option>
+            <option value="UH">Unidad hidrológica (UH)</option>
+          </select>
+
+          <label for="filter-value" style="margin-left: 1rem;">Valor:</label>
+          <select id="filter-value" disabled>
+            <option value="">-- Seleccione --</option>
+          </select>
+        </div>
+
+        <!-- Gráfico -->
+        <div class="chart-container">
+          <canvas id="areaChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie -->
+  <footer class="footer">
+    Proyecto ASA ejecutado por el Instituto de Capacitación del Oriente - ICO, con apoyo de Zabalketa y financiado por la Agencia Española de Cooperación Internacional para el Desarrollo - AECID
+  </footer>
+
+  <!-- Modal de código de acceso -->
+  <div id="access-modal" class="modal">
+    <div class="modal-content">
+      <h4>Acceso a descarga</h4>
+      <p>Ingrese el código de acceso para descargar la cartografía.</p>
+      <input type="text" id="access-code" placeholder="Código de acceso" />
+      <div class="modal-buttons">
+        <button id="btn-confirm-download">Aceptar</button>
+        <button id="btn-cancel-download">Cancelar</button>
+      </div>
+      <p id="access-error" class="error-msg" style="display:none;">Código incorrecto. Intente nuevamente.</p>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <!-- Script propio -->
+  <script src="js/main.js"></script>
+</body>
+</html>

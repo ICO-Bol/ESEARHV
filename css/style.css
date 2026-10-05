@@ -1,0 +1,277 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, "Times New Roman", serif;
+  background: #f0f7f5;
+  color: #1b3a3a;
+  line-height: 1.5;
+}
+
+/* Encabezado */
+.header {
+  background: linear-gradient(90deg, #0f4c5c, #2a9d8f);
+  color: #ffffff;
+  padding: 1.2rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.header .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Contenedor principal */
+.main-container {
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 140px);
+}
+
+/* Panel izquierdo */
+.left-panel {
+  width: 380px;
+  background: #e8f4f1;
+  border-right: 1px solid #b8ddd6;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.left-panel h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #0f4c5c;
+}
+
+/* Acordeón */
+.accordion-item {
+  margin-bottom: 0.6rem;
+  border: 1px solid #b8ddd6;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  background: #d4ece8;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #0f4c5c;
+  cursor: pointer;
+}
+
+.accordion-content {
+  display: none;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.accordion-item.active .accordion-header {
+  background: #b8ddd6;
+}
+
+/* Sección de descarga */
+.download-section {
+  margin-top: 1.2rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid #b8ddd6;
+}
+
+.download-section h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #0f4c5c;
+}
+
+.download-list {
+  list-style: none;
+}
+
+.download-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+}
+
+.btn-download {
+  background: #2a9d8f;
+  color: #ffffff;
+  border: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.btn-download:hover {
+  background: #1f7a6f;
+}
+
+/* Panel derecho */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  flex: 1;
+  min-height: 500px;
+  width: 100%;
+}
+
+/* Dashboard */
+.dashboard {
+  background: #ffffff;
+  border-top: 1px solid #b8ddd6;
+  padding: 0.8rem 1rem;
+}
+
+.dashboard h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  color: #0f4c5c;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.filters label {
+  font-weight: 600;
+}
+
+.filters select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #b8ddd6;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.chart-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Pie */
+.footer {
+  background: #0f4c5c;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 1.2rem 1.4rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  font-size: 0.95rem;
+}
+
+.modal-content h4 {
+  margin-bottom: 0.5rem;
+  color: #0f4c5c;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.6rem 0;
+  border: 1px solid #b8ddd6;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  margin-top: 0.6rem;
+}
+
+.modal-buttons button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+#btn-confirm-download {
+  background: #2a9d8f;
+  color: #ffffff;
+}
+
+#btn-cancel-download {
+  background: #e0e0e0;
+  color: #222;
+}
+
+.error-msg {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #b8ddd6;
+  }
+
+  #map {
+    min-height: 350px;
+  }
+}
